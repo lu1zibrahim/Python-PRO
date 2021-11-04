@@ -124,13 +124,164 @@
 #
 # print(anos)
 
-# 7 - Faça um programa que leia 5 números e informe o maior número.
-maximo = float(input('Digite um número: '))
-soma = [maximo,]
-for _ in range(4):
-    num = float(input('Digite um número: '))
-    maximo = max(maximo, num)
-    print(f'Número máximo encontrado até agora é: {maximo}')
-    soma.append(num)
-print(sum(soma)/len(soma))
+# # 7 - Faça um programa que leia 5 números e informe o maior número.
+# maximo = float(input('Digite um número: '))
+# soma = [maximo,]
+# for _ in range(4):
+#     num = float(input('Digite um número: '))
+#     maximo = max(maximo, num)
+#     print(f'Número máximo encontrado até agora é: {maximo}')
+#     soma.append(num)
+# print(sum(soma)/len(soma))
 
+# # Método 2
+# soma = float(input('Digite um número: '))
+# for n in range(2,6):
+#     soma += float(input('Digite um número: '))
+#     media = soma / n
+#     print(f'A soma dos número é {soma}, e a média é {media}')
+#
+
+# 2 - Faça um Programa que leia um vetor de 10 números reais e mostre-os na ordem inversa.
+#
+# lst = []
+#
+# for _ in range(10):
+#     numero = float(input("Digite um número: "))
+#     lst.append(numero)
+# print(lst[::-1])
+
+# 15 - Faça um programa que leia um número indeterminado de valores,
+# correspondentes a notas, encerrando a entrada de dados quando for informado um valor igual a -1 (que não deve ser armazenado).
+# Após esta entrada de dados, faça:
+# Mostre a quantidade de valores que foram lidos;
+# Exiba todos os valores na ordem em que foram informados, um ao lado do outro;
+# Exiba todos os valores na ordem inversa à que foram informados, um abaixo do outro;
+# Calcule e mostre a soma dos valores;
+# Calcule e mostre a média dos valores;
+# Calcule e mostre a quantidade de valores acima da média calculada;
+# Calcule e mostre a quantidade de valores abaixo de sete;
+# Encerre o programa com uma mensagem;
+
+#
+# notas = []
+#
+# while True:
+#     entrada = input('Digite um número: ')
+#     if entrada == '-1':
+#         break
+#     notas.append(float(entrada))
+#
+#
+# tamanho = len(notas)
+# print(f"Foram lidas {tamanho} notas")
+# print(' '.join([str(nota) for nota in notas]))
+# notas.reverse
+# print('\n'.join([str(nota) for nota in notas]))
+#
+# soma = sum(notas)
+# print(f'Soma das notas é: {soma}')
+# media = soma/tamanho
+# print(f'A média das notas é: {media}')
+#
+# print("Notas acima da média: ")
+# print(' '.join([str(nota) for nota in notas if nota > media]))
+# print("Notas abaixo de 7: ")
+# print(' '.join([str(nota) for nota in notas if nota < 7]))
+#
+# print("Encerrado programa de estatística de notas")
+
+
+# 16 -
+#Utilize uma lista para resolver o problema a seguir. Uma empresa paga seus vendedores com base em comissões. O vendedor recebe $200 por semana mais 9 por cento de suas vendas brutas daquela semana. Por exemplo, um vendedor que teve vendas brutas de $3000 em uma semana recebe $200 mais 9 por cento de $3000, ou seja, um total de $470. Escreva um programa (usando um array de contadores) que determine quantos vendedores receberam salários nos seguintes intervalos de valores:
+# $200 - $299
+# $300 - $399
+# $400 - $499
+# $500 - $599
+# $600 - $699
+# $700 - $799
+# $800 - $899
+# $900 - $999
+# $1000 em diante
+
+# salarios = [200, 250, 320, 413, 516, 680, 791, 877, 999, 1000, 2000, 3000]
+# contagem_de_faixa_salarial = [0] * 9
+# for salario in salarios:
+#     indice = (salario // 100) - 2
+#     indice_maximo = len(contagem_de_faixa_salarial) - 1
+#     indice = min(indice, indice_maximo)
+#     contagem_de_faixa_salarial[indice] += 1
+#
+# print(contagem_de_faixa_salarial)
+
+# Faça um programa para imprimir:
+#     1
+#     2   2
+#     3   3   3
+#     .....
+#     n   n   n   n   n   n  ... n
+# para um n informado pelo usuário. Use uma função que receba um valor n inteiro e imprima até a n-ésima linha.
+
+# def imprimir_triangulo_de_numeros(n: int):
+#     for i in range(1, n+1):
+#         for _ in range(i):
+#             print(i, end = '   ')
+#         print('')
+#
+#
+# print("Triangulo com 1")
+# imprimir_triangulo_de_numeros(1)
+# print("Triangulo com 2")
+# imprimir_triangulo_de_numeros(2)
+# print("Triangulo com 3")
+# imprimir_triangulo_de_numeros(3)
+
+#Faça um programa para imprimir:
+#     1
+#     1   2
+#     1   2   3
+#     .....
+#     1   2   3   ...  n
+# para um n informado pelo usuário. Use uma função que receba um valor n inteiro imprima até a n-ésima linha.
+
+def imprimir_triangulo_de_numeros(n: int):
+    for i in range(1, n+1):
+        n = 1
+        for _ in range(i):
+            print(n, end = '   ')
+            n+=1
+        print('')
+
+
+print("Triangulo com 1")
+imprimir_triangulo_de_numeros(1)
+print("Triangulo com 2")
+imprimir_triangulo_de_numeros(2)
+print("Triangulo com 3")
+imprimir_triangulo_de_numeros(20)
+
+
+#
+#Faça um programa para imprimir:
+#     1
+#     1   2
+#     1   2   3
+#     .....
+#     1   2   3   ...  n
+# para um n informado pelo usuário. Use uma função que receba um valor n inteiro imprima até a n-ésima linha.
+
+# #Maneira do professor
+# def imprimir_triangulo_de_numeros(n: int):
+#     for linha in range(1, n+1):
+#         for coluna in range(1,linha+1):
+#             print(coluna, end = '   ')
+#         print('')
+#
+#
+# print("Triangulo com 1")
+# imprimir_triangulo_de_numeros(1)
+# print("Triangulo com 2")
+# imprimir_triangulo_de_numeros(2)
+# print("Triangulo com 3")
+# imprimir_triangulo_de_numeros(20)
+#
