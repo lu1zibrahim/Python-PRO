@@ -243,22 +243,22 @@
 #     .....
 #     1   2   3   ...  n
 # para um n informado pelo usuário. Use uma função que receba um valor n inteiro imprima até a n-ésima linha.
-
-def imprimir_triangulo_de_numeros(n: int):
-    for i in range(1, n+1):
-        n = 1
-        for _ in range(i):
-            print(n, end = '   ')
-            n+=1
-        print('')
-
-
-print("Triangulo com 1")
-imprimir_triangulo_de_numeros(1)
-print("Triangulo com 2")
-imprimir_triangulo_de_numeros(2)
-print("Triangulo com 3")
-imprimir_triangulo_de_numeros(20)
+#
+# def imprimir_triangulo_de_numeros(n: int):
+#     for i in range(1, n+1):
+#         n = 1
+#         for _ in range(i):
+#             print(n, end = '   ')
+#             n+=1
+#         print('')
+#
+#
+# print("Triangulo com 1")
+# imprimir_triangulo_de_numeros(1)
+# print("Triangulo com 2")
+# imprimir_triangulo_de_numeros(2)
+# print("Triangulo com 3")
+# imprimir_triangulo_de_numeros(20)
 
 
 #
@@ -285,3 +285,139 @@ imprimir_triangulo_de_numeros(20)
 # print("Triangulo com 3")
 # imprimir_triangulo_de_numeros(20)
 #
+
+
+# 1 - Tamanho de strings. Faça um programa que leia 2 strings e informe o conteúdo delas seguido do seu comprimento.
+# Informe também se as duas strings possuem o mesmo comprimento e são iguais ou diferentes no conteúdo.
+#
+# Compara duas strings
+# String 1: Brasil Hexa 2006
+# String 2: Brasil! Hexa 2006!
+# Tamanho de "Brasil Hexa 2006": 16 caracteres
+# Tamanho de "Brasil! Hexa 2006!": 18 caracteres
+# As duas strings são de tamanhos diferentes.
+# As duas strings possuem conteúdo diferente.
+
+# s1 = input("DIgite uma string ")
+# s2 = input("DIgite outras string ")
+#
+# tamanho1 = len(s1)
+# tamanho2 = len(s2)
+#
+# print(f'"{s1}" : {tamanho1} caracteres')
+# print(f'"{s2}" : {tamanho2} caracteres')
+# comparacao_de_tamanho = 'diferentes'
+# comparacao_de_conteudo = 'diferentes'
+#
+# if s1 == s2:
+#     comparacao_de_tamanho = 'iguais'
+#     comparacao_de_conteudo = 'igual'
+# elif tamanho1 == tamanho2:
+#     comparacao_de_tamanho = 'iguais'
+#
+#
+# print(f'As duas strings são de tamanhos {comparacao_de_tamanho}')
+# print(f'As duas strings possuem conteúdo {comparacao_de_conteudo}')
+
+# 2 - Nome ao contrário em maiúsculas. Faça um programa que permita ao usuário digitar o seu nome
+# e em seguida mostre o nome do usuário de trás para frente utilizando somente letras maiúsculas.
+# Dica: lembre−se que ao informar o nome o usuário pode digitar letras maiúsculas ou minúsculas.
+
+# s1 = input("Digite uma string ")
+# print(s1[::-1].upper())
+
+#Resolucao professor
+
+# nome = "Luiz Otavio Ibrahim".upper()
+#
+# nome_invertido_por_letras = ''.join(reversed(nome))
+#
+# nome_invertido_por_palavras = ' '.join(reversed(nome.split()))
+#
+# print(f'Nome com letras em maiúsculo: {nome}')
+# print(f'Nome com letras em maiúsculo invertido por letras: {nome_invertido_por_letras}')
+# print(f'Nome com letras em maiúsculo invertido por palavras: {nome_invertido_por_palavras}')
+
+# Nome na vertical. Faça um programa que solicite o nome do usuário e imprima-o na vertical.
+#
+# F
+# U
+# L
+# A
+# N
+# O
+
+
+# s1 = input("Digite uma string ")
+# counter = 0
+# for i in s1:
+#     print(s1[:counter])
+#     counter += 1
+# print(s1[::])
+
+
+
+s1 = input("Digite uma string ")
+while s1 != '':
+    print(s1)
+    s1 = s1[:-1]
+# 11 - Jogo de Forca. Desenvolva um jogo da forca. O programa terá uma lista de palavras lidas de um arquivo texto e escolherá uma aleatoriamente. O jogador poderá errar 6 vezes antes de ser enforcado.
+#
+# Digite uma letra: A
+# -> Você errou pela 1ª vez. Tente de novo!
+#
+# Digite uma letra: O
+# A palavra é: _ _ _ _ O
+#
+# Digite uma letra: E
+# A palavra é: _ E _ _ O
+#
+# Digite uma letra: S
+# -> Você errou pela 2ª vez. Tente de novo!
+
+# palavra = "DevPro".upper()
+#
+# print("Jogo da Forca")
+# print("Descubra a palavra")
+#
+# numero_de__= ["_" for letra in palavra]
+# print(numero_de__)
+# print(f"A palavra é {' '.join(numero_de__)}")
+# counter = 0
+# print(palavra.split())
+
+# palavra = "DevPro".upper()
+#
+# print("Jogo da Forca")
+# print("Descubra a palavra")
+# print('A Palavra é: ', end='')
+# for letra in palavra:
+#     print('_ ', end='')
+#
+# conjunto_letras_palavra = set(palavra)
+# conjunto_letras_digitadas = set()
+# erros = 0
+#
+# while not conjunto_letras_palavra.issubset(conjunto_letras_digitadas) and erros < 7:
+#     print()
+#     print()
+#     letra_digitada = input('Digite uma letra: ').upper()
+#     conjunto_letras_digitadas.add(letra_digitada)
+#     if letra_digitada in conjunto_letras_palavra:
+#         print('A Palavra é: ', end='')
+#         for letra in palavra:
+#             if letra in conjunto_letras_digitadas:
+#                 print(f'{letra} ', end='')
+#             else:
+#                 print('_ ', end='')
+#     else:
+#         erros += 1
+#         print(f'--> Erro {erros} de 6. Tente de novo!')
+#
+#     print()
+#     print('Letras já digitadas: ', conjunto_letras_digitadas)
+#
+# if erros < 7:
+#     print("Parabéns, você ganhou!")
+# else:
+#     print("Infelizmente, você perdeu")
