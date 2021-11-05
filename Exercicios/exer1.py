@@ -421,3 +421,93 @@
 #     print("Parabéns, você ganhou!")
 # else:
 #     print("Infelizmente, você perdeu")
+
+
+# Contagem de caracteres com uma lista
+
+# def contar_caracteres(s):
+#     """
+#     >>> contar_caracteres('Luiz')
+#     i: 1
+#     l: 1
+#     u: 1
+#     z: 1
+#     >>> contar_caracteres("banana")
+#     a: 3
+#     b: 1
+#     n: 2
+#     :param s: String a ser contada
+#     """
+#     caracteres_ordenados = sorted(s)
+#
+#     caracter_anterior = caracteres_ordenados[0]
+#     contagem = 1
+#
+#     for caracter in caracteres_ordenados[1:]:
+#         if caracter == caracter_anterior:
+#             contagem += 1
+#         else:
+#             print(f'{caracter_anterior}: {contagem}')
+#             caracter_anterior = caracter
+#             contagem = 1
+#     print(f'{caracter_anterior}: {contagem}')
+#
+# if __name__ == '__main__':
+#     contar_caracteres('luiz')
+#     print()
+#     contar_caracteres('banana')
+
+
+#Contagem com um dicionario
+# def contar_caracteres(s):
+#     """
+#     >>> contar_caracteres('Luiz')
+#     {'i': 1, 'l': 1, 'u': 1, 'z': 1}
+#     >>> contar_caracteres("banana")
+#     {'a': 3, 'b': 1, 'n': 2,}
+#     :param s: String a ser contada
+#     """
+#
+#     caracteres_ordenados = sorted(s)
+#
+#     caracter_anterior = caracteres_ordenados[0]
+#     contagem = 1
+#
+#     resultado = {}
+#
+#     for caracter in caracteres_ordenados[1:]:
+#         if caracter == caracter_anterior:
+#             contagem += 1
+#         else:
+#             resultado[caracter_anterior] = contagem
+#             caracter_anterior = caracter
+#             contagem = 1
+#     resultado[caracter_anterior] = contagem
+#
+#     return resultado
+#
+# if __name__ == '__main__':
+#     print(contar_caracteres('luiz'))
+#     print()
+#     print(contar_caracteres('banana'))
+#
+#
+# def contar_caracteres(s):
+#     """
+#     >>> contar_caracteres('Luiz')
+#     {'i': 1, 'l': 1, 'u': 1, 'z': 1}
+#     >>> contar_caracteres("banana")
+#     {'a': 3, 'b': 1, 'n': 2,}
+#     :param s: String a ser contada
+#     """
+#     resultado = {}
+#
+#     for caracter in s:
+#         resultado[caracter] = resultado.get(caracter, 0) + 1
+#
+#     return resultado
+#
+# if __name__ == '__main__':
+#     print(contar_caracteres('luiz'))
+#     print()
+#     print(contar_caracteres('banana'))
