@@ -601,6 +601,236 @@
 # de forma a agilizar a execução do programa. A conversão da espaço ocupado em disco,
 # de bytes para megabytes deverá ser feita através de uma função separada, que será chamada pelo programa principal.
 # O cálculo do percentual de uso também deverá ser feito através de uma função, que será chamada pelo programa principal.
+#
+# lista_de_dados = []
+#
+# def transformar_em_megabytes(tamanho_em_bytes:str) -> float:
+#     return int(tamanho_em_bytes)/(2**10) **2
+#
+# with open('sample_data/usuarios.txt', 'r') as arquivo:
+#     for linha in arquivo:
+#         linha = linha.strip()
+#         usuario = linha[:15]
+#         tamanho_em_disco = transformar_em_megabytes(linha[16:])
+#         lista_de_dados.append((usuario,tamanho_em_disco))
+#
+# cabecalho = """ACME Inc.               Uso do espaço em disco pelos usuários
+# ------------------------------------------------------------------------
+# Nr.  Usuário        Espaço utilizado     % do uso
+# """
+#
+#
+# with open('sample_data/relatorio.txt', 'w') as arquivo:
+#     tamanho_total_consumido = sum([tamanho for _,tamanho in lista_de_dados])
+#     media = tamanho_total_consumido/len(lista_de_dados)
+#     arquivo.writelines(cabecalho)
+#
+#     for indice, dados in enumerate(lista_de_dados, start=1):
+#         usuario, tamanho_em_disco = dados
+#         arquivo.writelines(
+#             f'{indice:<4} {usuario} {tamanho_em_disco:9.2f} MB         '
+#             f'{tamanho_em_disco/tamanho_total_consumido:>6.2%}\n'
+#         )
+#
+#     arquivo.writelines('\n')
+#     arquivo.writelines(f'Espaço total ocupado: {tamanho_total_consumido:.2f} MB\n')
+#     arquivo.writelines(f'Espaço; médio; ocupado: {media:.2f} MB')
+
+#Classe Bola: Crie uma classe que modele uma bola:
+
+# Atributos: Cor, circunferência, material
+# Métodos: trocaCor e mostraCor
+
+# class Bola():
+#
+#     def __init__(self, cor, circunferencia, material):
+#         self.cor = cor
+#         self.circunferencia = circunferencia
+#         self.materia = material
+#
+#     def troca_cor(self, cor):
+#         self.cor = cor
+#
+#     def mostrar_cor(self):
+#         return self.cor
+#
+# bola1 = Bola("Azul", 30, "Borracha")
+# print(bola1.mostrar_cor())
+# bola1.troca_cor("Vermelho")
+# print(bola1.mostrar_cor())
+
+
+# 2 - Classe Quadrado: Crie uma classe que modele um quadrado:
+#
+# Atributos: Tamanho do lado
+# Métodos: Mudar valor do Lado, Retornar valor do Lado e calcular Área;
+
+# class Quadrado():
+#
+#     def __init__(self, lado = 1):
+#         self.lado = lado
+#
+#     def calcular_area(self):
+#         return self.lado **2
+#
+#
+# quadrado = Quadrado(5)
+# print(quadrado.lado, quadrado.calcular_area())
+
+# 4 - Classe Pessoa: Crie uma classe que modele uma pessoa:
+#
+# Atributos: nome, idade, peso e altura
+# Métodos: Envelhercer, engordar, emagrecer, crescer. Obs: Por padrão,
+# a cada ano que nossa pessoa envelhece, sendo a idade dela menor que 21 anos, ela deve crescer 0,5 cm.
+
+# class Pessoa():
+#
+#     def __init__(self, nome, idade, peso, altura):
+#         self.nome = nome
+#         self.idade = idade
+#         self.peso = peso
+#         self.altura = altura
+#
+#     def envelhecer(self):
+#         if self.idade < 21:
+#             self.altura += 0.5
+#         self.idade +=1
+#
+#     def engordar(self, aumento):
+#         self.peso += aumento
+#         return self.peso
+#
+#     def emagrecer(self, perda):
+#         self.peso -= perda
+#         return self.peso
+#
+#     def crescer(self, cresceu):
+#         self.altura += cresceu
+#         return self.altura
+#
+#
+#
+# otavio = Pessoa('Otavio', 2, 12, 80)
+#
+# for _ in range(22):
+#     otavio.envelhecer()
+#     print(f'Idade de {otavio.nome} é: {otavio.idade} anos. E a sua altura e {otavio.altura} cm')
+#
+# print(otavio.engordar(5))
+# print(otavio.emagrecer(3))
+# print(otavio.crescer(10))
+
+# Classe Bomba de Combustível: Faça um programa completo utilizando classes e métodos que:
+#
+# Possua uma classe chamada bombaCombustível, com no mínimo esses atributos:
+# tipoCombustivel.
+# valorLitro
+# quantidadeCombustivel
+# Possua no mínimo esses métodos:
+# abastecerPorValor( ) – método onde é informado o valor
+# a ser abastecido e mostra a quantidade de litros que foi colocada no veículo
+
+# abastecerPorLitro( ) – método onde é informado a quantidade em litros de combustível e
+# mostra o valor a ser pago pelo cliente.
+
+# alterarValor( ) – altera o valor do litro do combustível.
+# alterarCombustivel( ) – altera o tipo do combustível.
+# alterarQuantidadeCombustivel( ) – altera a quantidade de combustível restante na bomba.
+# OBS: Sempre que acontecer um abastecimento é necessário atualizar a quantidade de combustível total na bomba.
+
+# class BombaCombustivel():
+#
+#     def __init__(self, tipo_combustivel, valor_litro, quantidade_combustivel):
+#         self.tipo_combustivel = tipo_combustivel
+#         self.valor_litro = valor_litro
+#         self.quantidade_combustivel = quantidade_combustivel
+#
+#     def abastecer_por_valor(self, valor):
+#         litros_abastecidos = valor / self.valor_litro
+#         self._apresentar_abastecimento_se_possivel(litros_abastecidos, valor)
+#
+#     def abastercer_por_litro(self, litros_abastecidos):
+#         valor = litros_abastecidos * self.valor_litro
+#         self._apresentar_abastecimento_se_possivel(litros_abastecidos, valor)
+#
+#     def _apresentar_abastecimento_se_possivel(self, litros_abastecidos, valor):
+#         if litros_abastecidos > self.quantidade_combustivel:
+#             print(f'Não é possivel abastecer, faltam {litros_abastecidos - self.quantidade_combustivel} litros')
+#             print("Abasteça a bomba")
+#         else:
+#             self.quantidade_combustivel -= litros_abastecidos
+#             print(f'Foram abastecidos {litros_abastecidos:.2f} litros, a um valor de R$ {valor:.2f}')
+#             print(f'Sobraram na bomba {self.quantidade_combustivel:.2f} litros')
+#
+#     def alterar_valor(self, valor):
+#         self.valor_litro = valor
+#         return self.valor_litro
+#
+#     def alterar_combustivel(self, combustivel):
+#         self.tipo_combustivel = combustivel
+#         return self.tipo_combustivel
+#
+#     def alterar_quantidade_combustivel(self, quantidade):
+#         if quantidade >= 0:
+#             self.quantidade_combustivel += quantidade
+#         else:
+#             print("Não pode")
+#
+#
+# bomba_combustivel = BombaCombustivel("gasolina", 5, 100)
+# bomba_combustivel.abastecer_por_valor(20)
+# bomba_combustivel.quantidade_combustivel
+# bomba_combustivel.abastercer_por_litro(50)
+# bomba_combustivel.quantidade_combustivel
+# bomba_combustivel.alterar_valor(5.5)
+# bomba_combustivel.abastercer_por_litro(50)
+# bomba_combustivel.alterar_quantidade_combustivel(100)
+# bomba_combustivel.abastercer_por_litro(50)
+# bomba_combustivel.alterar_quantidade_combustivel(-100)
+
+# Projetos
+# 1. Controle de cotas de disco. A ACME Inc., uma organização com mais de 1500 funcionários,
+# está tendo problemas de espaço em disco no seu servidor de arquivos. Para tentar resolver este problema,
+# o Administrador de Rede precisa saber qual o espaço em disco ocupado pelas contas dos usuários, e identificar os usuários
+# com maior espaço ocupado. Através de um aplicativo baixado da Internet, ele conseguiu gerar o seguinte arquivo,
+# chamado usuarios.txt:
+#
+#
+# alexandre       456123789
+# anderson        1245698456
+# antonio         123456456
+# carlos          91257581
+# cesar           987458
+# rosemary        789456125
+# Neste arquivo, o primeiro campo corresponde ao login do usuário e o segundo ao espaço em disco ocupado pelo seu diretório home. A partir deste arquivo, você deve criar um programa que gere um relatório, chamado relatório.txt, no seguinte formato:
+#
+#
+# ACME Inc.           Uso do espaço em disco pelos usuários
+# ------------------------------------------------------------------------
+# Nr.  Usuário        Espaço utilizado     % do uso
+#
+# 1    alexandre       434,99 MB            16,85%
+# 2    anderson       1187,99 MB            46,02%
+# 3    antonio         117,73 MB             4,56%
+# 4    carlos           87,03 MB             3,37%
+# 5    cesar             0,94 MB             0,04%
+# 6    rosemary        752,88 MB            29,16%
+#
+# Espaço total ocupado: 2581,57 MB
+# Espaço médio ocupado: 430,26 MB
+# O arquivo de entrada deve ser lido uma única vez, e os dados armazenados em memória,
+# caso sejam necessários, de forma a agilizar a execução do programa. A conversão da espaço ocupado em disco,
+# de bytes para megabytes deverá ser feita através de uma função separada, que será chamada pelo programa principal.
+# O cálculo do percentual de uso também deverá ser feito através de uma função, que será chamada pelo programa principal.
+# Recursos adicionais: opcionalmente, desenvolva as seguintes funcionalidades:
+#
+# Ordenar os usuários pelo percentual de espaço ocupado;
+# Mostrar apenas os n primeiros em uso, definido pelo usuário;
+#
+# Gerar a saída numa página html;
+# Criar o programa que lê as pastas e gera o arquivo inicial;
+
+
 
 lista_de_dados = []
 
@@ -612,21 +842,24 @@ with open('sample_data/usuarios.txt', 'r') as arquivo:
         linha = linha.strip()
         usuario = linha[:15]
         tamanho_em_disco = transformar_em_megabytes(linha[16:])
-        lista_de_dados.append((usuario,tamanho_em_disco))
+        lista_de_dados.append((tamanho_em_disco, usuario))
 
 cabecalho = """ACME Inc.               Uso do espaço em disco pelos usuários
 ------------------------------------------------------------------------
 Nr.  Usuário        Espaço utilizado     % do uso
 """
 
+n = int(input('Digite o numero de usuários a serem exibidos: '))
+lista_de_dados.sort(reverse=True)
+lista_de_dados = lista_de_dados[:n]
 
 with open('sample_data/relatorio.txt', 'w') as arquivo:
-    tamanho_total_consumido = sum([tamanho for _,tamanho in lista_de_dados])
+    tamanho_total_consumido = sum([tamanho for tamanho, _ in lista_de_dados])
     media = tamanho_total_consumido/len(lista_de_dados)
     arquivo.writelines(cabecalho)
 
     for indice, dados in enumerate(lista_de_dados, start=1):
-        usuario, tamanho_em_disco = dados
+        tamanho_em_disco, usuario  = dados
         arquivo.writelines(
             f'{indice:<4} {usuario} {tamanho_em_disco:9.2f} MB         '
             f'{tamanho_em_disco/tamanho_total_consumido:>6.2%}\n'
@@ -635,3 +868,4 @@ with open('sample_data/relatorio.txt', 'w') as arquivo:
     arquivo.writelines('\n')
     arquivo.writelines(f'Espaço total ocupado: {tamanho_total_consumido:.2f} MB\n')
     arquivo.writelines(f'Espaço; médio; ocupado: {media:.2f} MB')
+
