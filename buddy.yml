@@ -1,8 +1,7 @@
-- pipeline: "libpythonpro"
-  on: "EVENT"
-  events:
-  - type: "PUSH"
-    refs:
-    - "refs/heads/main"
-  priority: "NORMAL"
-  fail_on_prepare_env_warning: true
+language: python
+python:
+  -3.10
+install:
+  - pip install -r requirements-dev.txt
+script:
+  -flake8
