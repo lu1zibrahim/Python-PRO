@@ -1,8 +1,0 @@
-- pipeline: "libpythonpro"
-  on: "EVENT"
-  events:
-  - type: "PUSH"
-    refs:
-    - "refs/heads/main"
-  priority: "NORMAL"
-  fail_on_prepare_env_warning: true
