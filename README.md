@@ -10,6 +10,7 @@ link para o curso [Python Pro](https://www.python.pro.br/)
 [![Build Status](https://app.travis-ci.com/lu1zibrahim/Python-PRO.svg?branch=main)](https://app.travis-ci.com/lu1zibrahim/Python-PRO)
 [![Updates](https://pyup.io/repos/github/lu1zibrahim/Python-PRO/shield.svg)](https://pyup.io/repos/github/lu1zibrahim/Python-PRO/)
 [![Python 3](https://pyup.io/repos/github/lu1zibrahim/Python-PRO/python-3-shield.svg)](https://pyup.io/repos/github/lu1zibrahim/Python-PRO/)
+[![codecov](https://codecov.io/gh/lu1zibrahim/Python-PRO/branch/main/graph/badge.svg?token=7BN7BV7MO9)](https://codecov.io/gh/lu1zibrahim/Python-PRO)
 
 
 Para instalar:
