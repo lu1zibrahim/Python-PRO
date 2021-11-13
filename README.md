@@ -5,7 +5,12 @@ Nesse curso é ensinado como contribuir com projetos de código aberto
 
 link para o curso [Python Pro](https://www.python.pro.br/)
 
-Suportada versão 3 de Python
+#Badges:
+
+[![Build Status](https://app.travis-ci.com/lu1zibrahim/Python-PRO.svg?branch=main)](https://app.travis-ci.com/lu1zibrahim/Python-PRO)
+[![Updates](https://pyup.io/repos/github/lu1zibrahim/Python-PRO/shield.svg)](https://pyup.io/repos/github/lu1zibrahim/Python-PRO/)
+[![Python 3](https://pyup.io/repos/github/lu1zibrahim/Python-PRO/python-3-shield.svg)](https://pyup.io/repos/github/lu1zibrahim/Python-PRO/)
+
 
 Para instalar:
 ```console
@@ -26,6 +31,5 @@ Tópico a serem abordados:
 3- Pip
 
 
-#Badges:
 
-[![Build Status](https://app.travis-ci.com/lu1zibrahim/Python-PRO.svg?branch=main)](https://app.travis-ci.com/lu1zibrahim/Python-PRO)
+
