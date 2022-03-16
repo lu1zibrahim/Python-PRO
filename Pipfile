@@ -1,22 +1,22 @@
 [[source]]
+name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
-name = "pypi"
+
+[dev-packages]
+coverage = "*"
+flake8 = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-mock = "*"
 
 [packages]
 certifi = "==2020.6.20"
 charset-normalizer = "==2.0.7"
 idna = "==3.3"
 requests = "==2.26.0"
-urllib3 = "==1.26.7"
+urllib3 = "==1.26.9"
 wincertstore = "==0.2"
-
-[dev-packages]
-flake8 = "*"
-pytest = "*"
-coverage = "*"
-pytest-cov = "*"
-pytest-mock = "*"
 
 [requires]
 python_version = "3.9"
